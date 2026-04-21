@@ -6,14 +6,14 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/Huycon2352/python-samples/main'
+                git branch: 'main',
+                    url: 'https://github.com/Huycon2352/python-samples.git'
             }
         }
 
         stage('Build') {
             steps {
-                    sh 'docker build -t myapp .'
-                }
+                sh 'docker build -t myapp .'
             }
         }
 
