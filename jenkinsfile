@@ -16,6 +16,16 @@ pipeline {
                 sh 'docker build -t myapp .'
             }
         }
+        stage('Debug Workspace') {
+    steps {
+        sh 'echo "Current dir:"'
+        sh 'pwd'
+        sh 'echo "Files in workspace:"'
+        sh 'ls -la'
+        sh 'echo "Find Dockerfile:"'
+        sh 'find . -name Dockerfile'
+    }
+}
 
     }
 
