@@ -11,11 +11,6 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                sh 'docker build -t myapp .'
-            }
-        }
         stage('Debug Workspace') {
     steps {
         sh 'echo "Current dir:"'
@@ -26,6 +21,13 @@ pipeline {
         sh 'find . -name Dockerfile'
     }
 }
+
+        stage('Build') {
+            steps {
+                sh 'docker build -t myapp .'
+            }
+        }
+       
 
     }
 
